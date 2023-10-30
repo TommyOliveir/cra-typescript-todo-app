@@ -10,7 +10,6 @@ interface TodoListProps {
 const TodoList = ( {todos, setTodos}: TodoListProps) => {
   return (
     <div className="todos">
-      TodoList{" "}
       {todos.map((todo) => (
     
         <SingleTodo todo={todo} key={todo.id} todos={todos} setTodos={setTodos}/>
