@@ -50,3 +50,19 @@
   color: 
 #fe5846;
 }
+
+.container {
+  display: flex;
+}
+
+.todos {
+  background: rgb(221, 221, 239);
+  padding: 50px
+  ;
+}
+
+.remove {
+  background: rgb(247, 192, 180);
+ 
+  ;
+}
