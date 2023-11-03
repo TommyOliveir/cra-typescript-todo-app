@@ -47,7 +47,7 @@ const TodoList = ({ todos, setTodos, completedTodos, setCompletedTodos }: TodoLi
             {...provided.droppableProps}
           >
             <span className="todos_heading">completed task</span>
-            {todos.map((todo) => (
+            {completedTodos.map((todo) => (
               <SingleTodo
                 todo={todo}
                 key={todo.id}
