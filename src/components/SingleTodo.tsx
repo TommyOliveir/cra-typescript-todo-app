@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Todo } from "../model";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
-import { Draggable } from "react-beautiful-dnd";
 
 interface SingleTodoProps {
   index: number;
@@ -42,15 +41,12 @@ const SingleTodo = ({ index, todo, todos, setTodos }: SingleTodoProps) => {
   }, [edit]);
 
   return (
-    <Draggable draggableId={todo.id.toString()} index={index}>
-      {(provided) => (
+   
         <form
           action=""
           className="todos__single"
           onSubmit={(e) => handleEdit(e, todo.id)}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          ref={provided.innerRef}
+  
         >
           {edit ? (
             <input
@@ -86,9 +82,8 @@ const SingleTodo = ({ index, todo, todos, setTodos }: SingleTodoProps) => {
             </span>
           </div>
         </form>
-      )}
-    </Draggable>
-  );
+      )
+
 };
 
 export default SingleTodo;
