@@ -10,7 +10,12 @@ interface TodoListProps {
   setCompletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
-const TodoList = ({ todos, setTodos, completedTodos, setCompletedTodos }: TodoListProps) => {
+const TodoList = ({
+  todos,
+  setTodos,
+  completedTodos,
+  setCompletedTodos,
+}: TodoListProps) => {
   return (
     // <div className="todos">
     //   {todos.map((todo) => (
@@ -27,8 +32,9 @@ const TodoList = ({ todos, setTodos, completedTodos, setCompletedTodos }: TodoLi
             {...provided.droppableProps}
           >
             <span className="todos_heading">active task</span>
-            {todos.map((todo) => (
+            {todos.map((todo, index) => (
               <SingleTodo
+                index={index}
                 todo={todo}
                 key={todo.id}
                 todos={todos}
@@ -47,8 +53,9 @@ const TodoList = ({ todos, setTodos, completedTodos, setCompletedTodos }: TodoLi
             {...provided.droppableProps}
           >
             <span className="todos_heading">completed task</span>
-            {completedTodos.map((todo) => (
+            {completedTodos.map((todo, index) => (
               <SingleTodo
+                index={index}
                 todo={todo}
                 key={todo.id}
                 todos={completedTodos}
